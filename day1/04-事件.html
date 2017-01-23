@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vue-事件</title>
+    <script src="vue.js"></script>
+    <script>
+        window.onload = function () {
+            var vm = new Vue({
+                el: '.box',
+                methods: {
+                    add: function () {
+                        this.arr.push('这是push进去的')
+                    }
+                },
+                data: {
+                    arr: ['1111', '2222', '3333', '4444']
+                }
+            });
+        };
+    </script>
+</head>
+<body>
+
+<div class="box">
+    <!--<input type="button" value="按钮" v-on:click="add()">-->
+    <!--<input type="button" value="按钮" v-on:mouseover="add()">-->
+    <input type="button" value="按钮" v-on:dblclick="add()">
+    <hr>
+    <ul>
+        <li v-for="v in arr">
+            {{v}}
+        </li>
+    </ul>
+
+</div>
+
+</body>
+</html>
