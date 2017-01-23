@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vue-属性</title>
+</head>
+<body>
+<div id="box">
+    <!--<img src="{{url}}" alt="">-->
+    <!--<img v-bind:src="url" alt="">-->
+    <img :src="url" alt="" :width="w">
+</div>
+
+<script src="vue.js"></script>
+<script>
+        new Vue({
+            el:'#box',
+            data:{
+                url:'https://ss0.bdstatic.com/5aV1bjqh_Q23odCf/static/superman/img/logo/bd_logo1_31bdc765.png',
+                w:'200px'
+            },
+            methods:{}
+        });
+</script>
+</body>
+</html>

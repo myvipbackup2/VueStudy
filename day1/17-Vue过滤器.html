@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vue-过滤器</title>
+</head>
+<body>
+<div id="box">
+    {{'welcome'}} => 转大写 => {{'welcome'|uppercase}}
+    <br><br>
+    {{'WELCOME'}} => 转小写 => {{'WELCOME'|lowercase}}
+    <br><br>
+    {{'welcome'}} => 首字母大写 => {{'welcome'|capitalize}}
+    <br><br>
+    {{'WELCOME'}} => 多个filter => {{'WELCOME'|lowercase|capitalize}}
+    <br><br>
+    钱的标志 => {{12|currency}}
+    <br><br>
+    currency传参 => {{12|currency "￥"}}
+</div>
+
+<script src="vue.js"></script>
+<script>
+    new Vue({
+        el: '#box',
+        data: {}
+    });
+</script>
+</body>
+</html>

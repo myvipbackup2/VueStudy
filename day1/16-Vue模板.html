@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vue-模板</title>
+</head>
+<body>
+<div id="box">
+    双向绑定：<input type="text" v-model="msg">
+    <hr>
+    双向绑定：{{msg}}
+    <hr>
+    只绑定一次：{{*msg}}
+    <hr>
+    html转意：{{{msg}}}
+</div>
+<script src="vue.js"></script>
+<script>
+    new Vue({
+        el: '#box',
+        data: {
+            msg:'welcome'
+        },
+        methods: {}
+    });
+</script>
+</body>
+</html>
