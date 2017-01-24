@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vue-转换时间戳过滤器</title>
+</head>
+<body>
+
+<div id="box">
+    <span>{{date |time}}</span>
+</div>
+
+
+<script src="vue.js"></script>
+<script>
+    window.onload = function () {
+        Vue.filter('time', function (t) {
+            var oDate = new Date(t);
+            return oDate.getFullYear() + '-' + (oDate.getMonth() + 1) + '-' + oDate.getDate() + ' ' + oDate.getHours() + ':' + oDate.getMinutes() + ':' + oDate.getSeconds();
+        });
+        var vm = new Vue({
+            el: '#box',
+            data: {
+                date: Date.now()
+            }
+        });
+    }
+</script>
+</body>
+</html>

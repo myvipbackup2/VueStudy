@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vue自定义过滤器</title>
+</head>
+<body>
+<div id="box">
+    <input type="text" v-model="key">
+    <br>
+    <span>{{key|fix}}</span>
+</div>
+
+
+<script src="vue.js"></script>
+<script>
+    window.onload = function () {
+        Vue.filter('fix', function (input) {
+            return input < 10 && input > 0 ? '0' + input : '' + input;
+        });
+        var vm = new Vue({
+            el: '#box',
+            data: {
+                key: ''
+            },
+        });
+    }
+</script>
+</body>
+</html>

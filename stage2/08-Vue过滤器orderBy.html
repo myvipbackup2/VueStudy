@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vue-orderBy</title>
+</head>
+<body>
+<div id="box">
+    <input type="text" v-model="key" placeholder="1正序，-1倒序排列">
+    <ul>
+        <li v-for="val in arr |orderBy key">
+            {{val}}
+        </li>
+    </ul>
+</div>
+
+<script src="vue.js"></script>
+<script>
+    var vm = new Vue({
+        el: '#box',
+        data: {
+            arr: ['word', 'apple', 'key', 'jd', 'js', 'java', 'node'],
+            key: ''
+        }
+    });
+</script>
+</body>
+</html>
