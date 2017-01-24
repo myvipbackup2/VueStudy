@@ -9,48 +9,66 @@
             height: 640px;
             margin: 100px auto;
         }
+
+        .sel {
+            background-color: #cccccc;
+        }
     </style>
 </head>
 <body>
 <div id="box">
-    <input type="text" placeholder="请输入搜索内容" @keyup="search()" v-model="key">
+    <input type="text" placeholder="请输入搜索内容" @keyup="search($event)" v-model="key" @keydown.up.prevent="up()"
+           @keydown.down="down()">
     <ul>
-        <li v-for="val in myData">{{val}}</li>
+        <li :class="{sel:$index==now}" v-for="val in myData">{{val}}</li>
     </ul>
     <p v-show="myData.length==0">暂无数据...</p>
 </div>
 
 <script src="vue.js"></script>
 <!--<script src="vue-resource.js"></script>-->
-<script src="//cdn.bootcss.com/vue-resource/0.7.4/vue-resource.common.js"></script>
+<script src="//cdn.bootcss.com/vue-resource/0.7.4/vue-resource.js"></script>
 <script>
     window.onload = function () {
         var vm = new Vue({
             el: '#box',
             data: {
                 myData: [],
-                key: ''
+                key: '',
+                now: -1
             },
             methods: {
-                search: function () {
-//                    this.$http.jsonp('https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su', {
-//                        wd: this.key
-//                    }, {
-//                        jsonp: 'cb'
-//                    }).then(function () {
-//                        alert('1');
-//                    },function () {
-//                        alert('搜索失败！')
-//                    });
-                    this.$http.jsonp('https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su',{
-                        wd:this.key
-                    },{
-                        jsonp:'cb'
-                    }).then(function(res){
-                        this.myData=res.data.s;
-                    },function(){
+                search: function (e) {
+                    if (e.keyCode == 38 || e.keyCode == 40) {
+                        return;
+                    }
+                    if (e.keyCode == 13) {
+                        window.open('https://www.baidu.com/s?wd=' + this.key);
+                        this.key = '';
+                    }
+                    this.$http.jsonp('https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su', {
+                        wd: this.key
+                    }, {
+                        jsonp: 'cb'
+                    }).then(function (res) {
+                        this.myData = res.data.s;
+                    }, function () {
                         alert('err');
                     });
+                },
+                down: function () {
+                    this.now++;
+                    if (this.now == this.myData.length) {
+                        this.now = 0;
+                    }
+                    this.key = this.myData[this.now];
+                },
+                up: function () {
+                    this.now--;
+                    if (this.now == -2 || this.now == -1) {
+                        this.now = this.myData.length - 1;
+                    }
+                    this.key = this.myData[this.now];
                 }
             }
         });
