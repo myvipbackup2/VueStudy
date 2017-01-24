@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vue-自定义指令</title>
+</head>
+<body>
+
+<div id="box">
+    <span v-text="msg" v-red></span>
+</div>
+
+
+<script src="vue.js"></script>
+<script>
+    window.onload = function () {
+        Vue.directive('red',function () {
+            this.el.style.color = 'red';
+        });
+        var vm = new Vue({
+            el: '#box',
+            data: {
+                msg: 'welcome'
+            }
+        });
+    }
+</script>
+</body>
+</html>
