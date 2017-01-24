@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vue计算属性的使用</title>
+</head>
+<body>
+
+<div id="box">
+    <span>{{a}}</span>
+    <hr>
+    <span>{{b}}</span>
+</div>
+
+
+<script src="vue.js"></script>
+<script>
+    window.onload = function () {
+        var vm = new Vue({
+            el: '#box',
+            data: {
+                a: 12
+            },
+            computed: {
+                b: {
+                    get: function () {
+                        return this.a + 2;
+                    },
+                    set: function (val) {
+                        this.a = val;
+                    }
+                }
+            }
+        });
+        document.onclick = function () {
+            vm.b = 22;
+        }
+    };
+</script>
+</body>
+</html>

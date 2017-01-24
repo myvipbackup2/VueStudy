@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vue重复数据</title>
+</head>
+<body>
+<div id="box">
+    <input type="button" value="添加" @click="add()">
+    <ul>
+        <li v-for="v in arr" track-by="$index">
+            {{v}}
+        </li>
+    </ul>
+</div>
+
+<script src="vue.js"></script>
+<script>
+    var vm = new Vue({
+        el: '#box',
+        data: {
+            arr: ['apple', 'banana', 'orange', 'pear']
+        },
+        methods: {
+            add: function () {
+                this.arr.push('pineapple')
+            }
+        }
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vue-实例简单方法</title>
+</head>
+<body>
+<div id="box">
+    {{msg}}
+    <br>
+    {{aa}}
+</div>
+
+
+<script src="vue.js"></script>
+<script>
+    window.onload = function () {
+        var vm = new Vue({
+            data: {
+                msg: 'welcome Vue'
+            },
+            aa: '这是自定义属性'
+        }).$mount('#box');
+        vm.$data.msg2 = '2';
+        console.log(vm.$options.aa);
+    }
+</script>
+</body>
+</html>
