@@ -1,2 +1,2 @@
-# VueStudy
+## VueStudy
 VueStudy
