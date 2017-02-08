@@ -9,12 +9,22 @@
             height: 100px;
             background-color: #f00;
         }
+        .fade-transition{
+            transition: all 1s ease;
+        }
+        .fade-enter{
+            opacity: 0;
+        }
+        .fade-leave{
+            opacity:0;
+            transform: translateX(200px);
+        }
     </style>
 </head>
 <body>
 <div id="box">
     <input type="button" value="按钮" @click='toggle'>
-    <div id="div1" v-show="bSign"></div>
+    <div id="div1" v-show="bSign" transition="fade"></div>
 </div>
 
 <script src="vue.js"></script>
@@ -27,7 +37,7 @@
             },
             methods: {
                 toggle(){
-
+                    this.bSign = !this.bSign;
                 }
             }
         });
