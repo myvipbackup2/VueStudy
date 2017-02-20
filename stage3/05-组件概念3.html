@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vue组件的概念</title>
+</head>
+<body>
+
+<div id="box">
+    <aaa></aaa>
+</div>
+
+<script src="vue.js"></script>
+<script>
+
+    Vue.component('aaa', {
+        template: '<h3>template</h3>'
+    });
+
+    var vm = new Vue({
+        el: '#box'
+    });
+
+
+</script>
+</body>
+</html>
