@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>使用animate.css</title>
+    <link rel="stylesheet" href="animate.css">
+    <style>
+        #box {
+            width: 400px;
+            margin: 100px auto;
+        }
+
+        #div1 {
+            margin-top: 30px;
+            width: 100px;
+            height: 100px;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+
+<div id="box">
+
+    <button type="button" @click="toggle">click me</button>
+
+    <div class="animated" id="div1" v-show="bFlag" transition="bounce"></div>
+
+</div>
+
+<script src="vue.js"></script>
+<script>
+
+    new Vue({
+
+        el: '#box',
+        data: {
+            bFlag: true
+        },
+        methods: {
+            toggle: function () {
+                this.bFlag = !this.bFlag;
+            }
+        },
+        transitions: {
+            bounce: {
+                enterClass: 'zoomInLeft',
+                leaveClass: 'zoomOutRight'
+            }
+        }
+
+    });
+
+</script>
+</body>
+</html>
