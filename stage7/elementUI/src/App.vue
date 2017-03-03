@@ -1,13 +1,16 @@
 <template>
     <div id="app">
 
+        {{msg}}
+        <br>
+
         <el-button>默认按钮</el-button>
         <el-button type="primary">主要按钮</el-button>
         <el-button type="text">文字按钮</el-button>
         <div class="block">
             <span class="demonstration">默认显示颜色</span>
             <span class="wrapper">
-                <el-button type="success">成功按钮</el-button>
+                <el-button icon="close" type="success">成功按钮</el-button>
                 <el-button type="warning">警告按钮</el-button>
                 <el-button type="danger">危险按钮</el-button>
                 <el-button type="info">信息按钮</el-button>
@@ -25,16 +28,45 @@
 
         <el-button type="primary" :loading="true">加载中</el-button>
 
+        <el-button-group>
+            <el-button type="primary" icon="arrow-left">上一页</el-button>
+            <el-button type="primary">下一页<i class="el-icon-arrow-right el-icon--right"></i></el-button>
+        </el-button-group>
+
+        <el-button-group>
+            <el-button type="primary" icon="edit"></el-button>
+            <el-button type="primary" icon="share"></el-button>
+            <el-button type="primary" icon="delete"></el-button>
+        </el-button-group>
+
+
+        <span class="el-icon-loading"></span>
+
+        <el-row>
+            <el-col :span="12">
+                <Date>1</Date>
+            </el-col>
+            <el-col :span="12">
+                <Date>3</Date>
+            </el-col>
+        </el-row>
+
+
+
     </div>
 </template>
 
 <script>
+    import Date from './components/Date.vue'
     export default {
         name: 'app',
         data () {
             return {
                 msg: 'Welcome to Your Vue.js App'
             }
+        },
+        components:{
+            Date
         }
     }
 </script>
