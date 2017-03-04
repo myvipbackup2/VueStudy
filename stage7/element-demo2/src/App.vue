@@ -1,15 +1,35 @@
 <template>
     <div id="app">
-        welcome Vue
+        <el-button @click="get">普通的按钮</el-button>
+
+        <span>默认数据</span>
+
+        <el-button type="primary">主要的按钮</el-button>
+
+        <el-radio class="radio" v-model="radio" label="1">备选项</el-radio>
+        <el-radio class="radio" v-model="radio" label="2">备选项</el-radio>
+
+        <el-badge :value="12" class="item">
+            <el-button size="small">评论</el-button>
+        </el-badge>
+
+        <!--使用axio交互 发送ajax请求-->
+
     </div>
 </template>
 
 <script>
+    import axios from 'axios'
     export default {
         name: 'app',
         data () {
             return {
-
+                radio: '2'
+            }
+        },
+        methods: {
+            get(){
+                alert(1);
             }
         }
     }
