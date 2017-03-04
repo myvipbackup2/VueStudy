@@ -1,8 +1,10 @@
 <template>
     <div id="app">
-        <el-button @click="get">普通的按钮</el-button>
+        <el-button :loading=bFlag @click="get">获取数据</el-button>
 
-        <span>默认数据</span>
+        <span>{{msg}}</span>
+
+        <hr>
 
         <el-button type="primary">主要的按钮</el-button>
 
@@ -24,12 +26,29 @@
         name: 'app',
         data () {
             return {
-                radio: '2'
+                radio: '2',
+                msg: '没有数据...',
+                bFlag: false
             }
+        },
+        mounted(){
+            //上来刷新页面就请求数据，mounted是生命周期
+//            this.get();
         },
         methods: {
             get(){
-                alert(1);
+                this.bFlag = !this.bFlag;
+                axios.get('//api.github.com/users/myvipbackup2')
+                    .then(function (response) {
+//                        console.log(response);
+                        this.msg = response.data.login;
+                        if (this.msg != '没有数据...') {
+                            this.bFlag = !this.bFlag;
+                        }
+                    }.bind(this))
+                    .catch(function (error) {
+                        console.log(error);
+                    });
             }
         }
     }
