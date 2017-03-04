@@ -21,7 +21,7 @@
                 pickerOptions1: {
                     shortcuts: [{
                         text: '今天',
-                        onClick(picker) {
+                        onClick(picker)   {
                             picker.$emit('pick', new Date());
                         }
                     }, {
