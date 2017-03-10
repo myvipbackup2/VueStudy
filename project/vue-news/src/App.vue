@@ -1,7 +1,6 @@
 <template>
     <div id="app">
         {{msg}}
-        s
     </div>
 </template>
 
