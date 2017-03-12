@@ -13,7 +13,6 @@
 <script>
     import NavHeader from './components/Nav.vue'
     import FooterView from './components/Footer.vue'
-
     import Home from './components/Home.vue'
 
     import {mapGetters} from 'vuex'
