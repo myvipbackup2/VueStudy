@@ -1,5 +1,5 @@
 <template>
-    <div class="content">
+    <div class="content mt40">
         <Slider></Slider>
         <div class="newsList">
             <ul>
@@ -7,6 +7,7 @@
                     <router-link :to="'/article/'+item.id">
                         <h2>{{index+1}} . {{item.title}}</h2>
                         <p>{{item.detail}}</p>
+                        <span>222</span>
                     </router-link>
                 </li>
             </ul>
@@ -46,4 +47,8 @@
 </script>
 <style scoped>
     @import '../assets/css/index.css';
+
+    .mt40 {
+        margin-top: 40px;
+    }
 </style>
