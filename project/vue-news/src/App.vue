@@ -2,7 +2,9 @@
     <div id="app">
         <loading v-show="loading"></loading>
         <NavView v-show="headerShow "></NavView>
-        <router-view></router-view>
+        <keep-alive>
+            <router-view></router-view>
+        </keep-alive>
         <FooterView></FooterView>
     </div>
 </template>
