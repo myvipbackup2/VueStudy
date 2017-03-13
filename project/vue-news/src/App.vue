@@ -1,5 +1,6 @@
 <template>
     <div id="app">
+        <loading v-show="loading"></loading>
         <NavView v-show="headerShow "></NavView>
         <router-view></router-view>
         <FooterView></FooterView>
@@ -25,7 +26,8 @@
             Home,
         },
         computed: mapGetters([
-            'headerShow'
+            'headerShow',
+            'loading'
         ]),
         watch: {
             $route(to, from) {
