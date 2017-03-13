@@ -7,5 +7,8 @@ export default {
     },
     loading: (state) => {
         return state.loading;
+    },
+    footerShow: (state) => {
+        return state.footer;
     }
 }

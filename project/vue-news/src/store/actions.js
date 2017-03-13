@@ -8,6 +8,12 @@ export default {
     hideHeader: ({commit}) => {
         commit('hideHeader')
     },
+    showFooter: ({commit}) => {
+        commit('showFooter')
+    },
+    hideFooter: ({commit}) => {
+        commit('hideFooter')
+    },
     showLoading: ({commit}) => {
         commit('showLoading')
     },

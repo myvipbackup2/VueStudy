@@ -17,7 +17,7 @@
                 <span>帐号</span>
             </li>
             <li>
-                <input type="text" value=""/>
+                <input type="password" value=""/>
                 <span>密码</span>
             </li>
         </ul>

@@ -6,6 +6,8 @@ import Follow from './components/Follow.vue'
 import Column from './components/Column.vue'
 import UserInfo from './components/UserInfo.vue'
 import Article from './components/Article.vue'
+import UserLogin from './components/UserLogin.vue'
+import UserReg from './components/UserReg.vue'
 
 export default [
     {
@@ -23,6 +25,14 @@ export default [
     {
         path: '/user-info',
         component: UserInfo
+    },
+    {
+        path: '/user-login',
+        component: UserLogin
+    },
+    {
+        path: '/user-reg',
+        component: UserReg
     },
     {
         path: '/article/:id',

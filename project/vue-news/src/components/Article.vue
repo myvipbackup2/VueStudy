@@ -10,8 +10,11 @@
                 <p>Lzx</p></div>
             <div class="cont">
                 <h3>{{articleData.title}}</h3>
-                <div class="time"><p>{{articleData.time | normalTime}} <span><img src="../assets/img/zan.png"
-                                                                                  alt=""/></span></p></div>
+                <div class="time">
+                    <p>{{articleData.time | normalTime}}
+                        <span><img src="../assets/img/zan.png" alt=""/></span>
+                    </p>
+                </div>
                 <div class="text-box" v-html="articleData.content"></div>
             </div>
         </div>
@@ -27,7 +30,7 @@
                     <a href="javascript:;"><i><img src="../assets/img/xing.png" alt=""/></i></a>
                 </li>
                 <li class="fx">
-                    <a href="javascript:;"><i><img src="../assets/img/fx.png" alt=""/></i></a>
+                    <a onclick="window.history.go(-1)"><i><img src="../assets/img/fx.png" alt=""/></i></a>
                 </li>
             </ul>
         </div>
@@ -112,7 +115,7 @@
     .content .header {
         padding: 0.39rem 0.28rem 0.15rem 0.28rem;
         height: auto;
-        background: none
+        /*background: none*/
     }
 
     .header h2 {
