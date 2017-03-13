@@ -16,12 +16,6 @@
     import {mapGetters, mapActions} from 'vuex';
 
     export default {
-        name: 'app',
-        data () {
-            return {
-                msg: 'Welcome to Lzx Vue.js App'
-            }
-        },
         components: {
             NavView,
             FooterView,

@@ -5,8 +5,6 @@
         <div class="login-box">
             <p class="lsolid"></p>
             <div class="login">
-                <!-- <a href="javascript:;">登录</a><span></span>
-                <a href="javascript:;">注册</a> -->
                 <router-link to="/user-login">登录</router-link>
                 <span></span>
                 <router-link to="/user-reg">注册</router-link>
@@ -24,7 +22,7 @@
             </li>
         </ul>
         <div class="footbox">
-            <input type="button" value="登 录" class="login-btn"/>
+            <input type="button" value="注 册" class="login-btn"/>
             <a href="javascript:;" class="tishi">忘记密码？</a>
         </div>
     </div>

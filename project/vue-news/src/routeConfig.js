@@ -10,72 +10,72 @@ import UserInfo from './components/UserInfo.vue'
 // import Article from './components/Article.vue'
 
 export default [
-  {
-    path:'/home',
-    component:Home
-  },
-  {
-    path:'/follow',
-    component:Follow
-  },
-  {
-    path:'/column',
-    component:Column
-  },
-  {
-    path:'/user-info',
-    component:UserInfo
-  },
-  // {
-  //   path:'/user-login',
-  //   component:UserLogin
-  // },
-  // {
-  //   path:'/user-reg',
-  //   component:UserReg
-  // },
-  // {
-  //   path:'/article/:id',
-  //   component:Article,
-  //   /*children:[
-  //     {
-  //       path:'/:id',
-  //       component:Article
-  //     }
-  //   ]*/
-  // },
-  { 
-    path: '/', 
-    redirect: '/home' 
-  },
-  { 
-    path: '*', 
-    redirect: '/home' 
-  }
+    {
+        path: '/home',
+        component: Home
+    },
+    {
+        path: '/follow',
+        component: Follow
+    },
+    {
+        path: '/column',
+        component: Column
+    },
+    {
+        path: '/user-info',
+        component: UserInfo
+    },
+    {
+        path: '/user-login',
+        component: UserLogin
+    },
+    {
+        path: '/user-reg',
+        component: UserReg
+    },
+    {
+        path: '/article/:id',
+        component: Article,
+        /*children:[
+         {
+         path:'/:id',
+         component:Article
+         }
+         ]*/
+    },
+    {
+        path: '/',
+        redirect: '/home'
+    },
+    {
+        path: '*',
+        redirect: '/home'
+    }
 ];
 
 /*const router={
-	mode: 'history',
-  scrollBehavior: () => ({ y: 0 }),
-	routes:[
-		{
-			path:'/home',
-			component:Home
-		},
-    {
-      path:'/follow',
-      component:Follow
-    },
-    {
-      path:'/column',
-      component:Column
-    },
-		{ 
-      path: '/', 
-      redirect: '/home' 
-    }
-	]
-};*/
+ mode: 'history',
+ scrollBehavior: () => ({ y: 0 }),
+ routes:[
+ {
+ path:'/home',
+ component:Home
+ },
+ {
+ path:'/follow',
+ component:Follow
+ },
+ {
+ path:'/column',
+ component:Column
+ },
+ {
+ path: '/',
+ redirect: '/home'
+ }
+ ]
+ };*/
 
 //export default new VueRouter(router);
 
