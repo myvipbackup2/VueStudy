@@ -23,7 +23,8 @@
         },
         computed: mapGetters([
             'headerShow',
-            'loading'
+            'loading',
+            'footerShow'
         ]),
         watch: {
             $route(to, from) {

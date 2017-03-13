@@ -17,18 +17,18 @@
         </div>
         <div class="foot-btn">
             <ul>
-                <li class="say"><a href="javascript:;">
-                    <i></i><span>0</span>
-                </a></li>
-                <li class="zan"><a href="javascript:;">
-                    <i></i><span>0</span>
-                </a></li>
-                <li class="xing"><a href="javascript:;">
-                    <i><img src="../assets/img/xing.png" alt=""/></i>
-                </a></li>
-                <li class="fx"><a href="javascript:;">
-                    <i><img src="../assets/img/fx.png" alt=""/></i>
-                </a></li>
+                <li class="say">
+                    <a href="javascript:;"><i></i><span>0</span></a>
+                </li>
+                <li class="zan">
+                    <a href="javascript:;"><i></i><span>0</span></a>
+                </li>
+                <li class="xing">
+                    <a href="javascript:;"><i><img src="../assets/img/xing.png" alt=""/></i></a>
+                </li>
+                <li class="fx">
+                    <a href="javascript:;"><i><img src="../assets/img/fx.png" alt=""/></i></a>
+                </li>
             </ul>
         </div>
     </div>
