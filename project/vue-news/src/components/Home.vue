@@ -7,7 +7,6 @@
                     <router-link :to="'/article/'+item.id">
                         <h2>{{index+1}} . {{item.title}}</h2>
                         <p>{{item.detail}}</p>
-                        <span>222</span>
                     </router-link>
                 </li>
             </ul>

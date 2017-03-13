@@ -1,6 +1,6 @@
 <template>
     <div id="app">
-        <NavView></NavView>
+        <NavView v-show="headerShow "></NavView>
         <router-view></router-view>
         <FooterView></FooterView>
     </div>
@@ -10,6 +10,7 @@
     import NavView from './components/Nav.vue';
     import FooterView from './components/Footer.vue';
     import Home from './components/Home.vue';
+    import {mapGetters, mapActions} from 'vuex';
 
     export default {
         name: 'app',
@@ -22,7 +23,19 @@
             NavView,
             FooterView,
             Home,
-        }
+        },
+        computed: mapGetters([
+            'headerShow'
+        ]),
+        watch: {
+            $route(to, from) {
+                if (to.path == '/user-info') {
+                    this.$store.dispatch('hideHeader');
+                } else {
+                    this.$store.dispatch('showHeader');
+                }
+            }
+        },
     }
 </script>
 
