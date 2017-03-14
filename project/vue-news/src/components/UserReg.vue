@@ -22,8 +22,10 @@
             </li>
         </ul>
         <div class="footbox">
-            <input type="button" value="注 册" class="login-btn"/>
-            <a href="javascript:;" class="tishi">忘记密码？</a>
+            <router-link to="/user-login">
+                <input type="button" value="注 册" class="login-btn"/>
+            </router-link>
+            <a href="javascript:;" class="tishi">已有帐号？</a>
         </div>
     </div>
 </template>

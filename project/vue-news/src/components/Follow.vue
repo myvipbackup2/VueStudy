@@ -1,5 +1,5 @@
 <template>
-    <div class="content mt30">
+    <div class="content mt40">
         <div class="newsList">
             <ul>
                 <li v-for="(item, index) in arrList">
@@ -27,10 +27,10 @@
             fetchData(){
                 var _this = this;
                 this.$http.get('src/data/follow.data').then(function (res) {
-                    //console.log( res.data);
-                    //setTimeout(function(){
+//                    console.log( res.data);
+//                    setTimeout(function () {
                     _this.arrList = res.data;
-                    //},1000);
+//                    },600);
                 }).catch(function (err) {
                     console.log(err);
                 });
@@ -39,7 +39,7 @@
     }
 </script>
 <style scoped>
-    .mt30 {
-        margin-top: 30px;
+    .mt40 {
+        margin-top: 40px;
     }
 </style>

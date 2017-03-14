@@ -28,7 +28,7 @@
         ]),
         watch: {
             $route(to, from) {
-                if (to.path == '/user-info') {
+                if (to.path == '/user-info' || to.path == '/user-reg' || to.path == '/user-login') {
                     this.$store.dispatch('hideHeader');
                 } else {
                     this.$store.dispatch('showHeader');

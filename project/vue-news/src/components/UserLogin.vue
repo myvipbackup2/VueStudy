@@ -24,7 +24,9 @@
             </li>
         </ul>
         <div class="footbox">
-            <input type="button" value="登 录" class="login-btn"/>
+            <router-link to="/home">
+                <input type="button" value="登 录" class="login-btn"/>
+            </router-link>
             <a href="javascript:;" class="tishi">忘记密码？</a>
         </div>
     </div>
