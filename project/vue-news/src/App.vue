@@ -33,7 +33,7 @@
                 } else {
                     this.$store.dispatch('showHeader');
                 }
-                if (to.path == '/article') {
+                if (to.path == '/article' || to.path == '/user-reg' || to.path == '/user-login') {
                     this.$store.dispatch('hideFooter');
                 } else {
                     this.$store.dispatch('showFooter');
