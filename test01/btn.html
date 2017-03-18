@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>toggle class</title>
+    <style>
+        .red {
+            width: 100px;
+            height: 100px;
+            background-color: #f00;
+        }
+    </style>
+</head>
+<body>
+<div id="app">
+    <button @click="toggle">点击改变</button>
+    <div :class="{red:bFlag}">这是文本</div>
+</div>
+
+<script src="../src/vue.js"></script>
+<script>
+    window.onload = function () {
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                bFlag: true
+            },
+            methods: {
+                toggle: function () {
+                    this.bFlag = !this.bFlag;
+                }
+            }
+        });
+    }
+</script>
+</body>
+</html>

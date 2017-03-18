@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>v-for</title>
+</head>
+<body>
+<div id="app">
+    <input v-model="newTxt" @keyup.enter="add" placeholder="输入并回车">
+    <ul>
+        <li v-for="(val, index) in arr">
+            {{val}}
+            <button @click="del(index)">Del</button>
+        </li>
+    </ul>
+</div>
+<script src="../src/vue.js"></script>
+<script>
+
+    new Vue({
+        el: '#app',
+        data: {
+            newTxt: '',
+            arr: [
+                '111111111',
+                '222222222',
+                '333333333'
+            ]
+        },
+        methods: {
+            add: function () {
+                this.arr.push(this.newTxt);
+                this.newTxt = '';
+            },
+            del: function (index) {
+                this.arr.splice(index, 1);
+            }
+        }
+    })
+</script>
+</body>
+</html>
