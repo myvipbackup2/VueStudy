@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>购物车</title>
+    <style>
+        #money {
+            font-size: 50px;
+            color: mediumvioletred;
+            float: right;
+            margin: 100px;
+        }
+
+        .hr {
+            background-color: mediumvioletred;
+            height: 1px;
+            width: 100%;
+            margin: 10px 0;
+        }
+
+        #form {
+            margin: 0 auto;
+            width: 90%;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+<div id="app">
+    <div class="hr"></div>
+    <div id="etc">
+        <label for="check">是否需要额外付费设施</label>
+        <input id="check" type="checkbox" @click="change">
+        <div v-show="bFlag">
+            <ul>
+                <li v-for="(val,index) in arr">
+                    {{val.name}}({{val.value}}元)<input type="checkbox" v-model="etc" :value='val'>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="hr"></div>
+    <h1>订单费用信息</h1>
+
+    <table id="form" border="1">
+        <tr>
+            <td></td>
+            <td>日均价</td>
+            <td>数量</td>
+            <td>总价</td>
+        </tr>
+        <tr v-for="val in etc">
+            <td>{{val.name}}</td>
+            <td>￥{{val.value}}元</td>
+            <td>
+                <button>-</button>
+                <input type="number" value="1">
+                <button>+</button>
+            </td>
+            <td>
+                ￥100元
+            </td>
+        </tr>
+    </table>
+
+    <span id="money">￥{{money}}元</span>
+</div>
+
+<script src="../src/vue.js"></script>
+<script>
+    window.onload = function () {
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                bFlag: false,
+                arr: [
+                    {
+                        name: '床',
+                        value: 100
+                    },
+                    {
+                        name: '沙发',
+                        value: 200
+                    },
+                    {
+                        name: 'wifi',
+                        value: 50
+                    }
+                ],
+                etc: [
+                    {
+                        name: '群力豪华型',
+                        value: 400
+                    }
+                ],
+            },
+            methods: {
+                change: function () {
+                    this.bFlag = !this.bFlag;
+                    if (!this.bFlag) {
+                        this.etc.splice(1);  //让数组初始化，长度为1，不能直接设置length有坑
+                    }
+                }
+            },
+            computed: {
+                money: function () {
+                    if (this.etc.length) {
+                        var total = 0;
+                        for (var i = 0; i < this.etc.length; i++) {
+                            total += parseInt(this.etc[i].value);
+                        }
+                        return total;
+                    } else {
+                        return 0;
+                    }
+                }
+            }
+        });
+    }
+</script>
+</body>
+</html>
