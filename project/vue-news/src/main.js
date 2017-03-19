@@ -5,7 +5,7 @@ import routerConfig from './routerConfig'
 import store from './store/index'
 import axios from 'axios'
 import Loading from './components/loading/index'
-// import filters from './filters'
+// import filters from './filters/index'
 
 // Object.keys(filters).forEach(key => Vue.filter(key, filters[key]));
 

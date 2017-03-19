@@ -54,12 +54,12 @@
             <td>{{val.name}}</td>
             <td>￥{{val.value}}元</td>
             <td>
-                <button>-</button>
-                <input type="number" value="1">
-                <button>+</button>
+                <button @click="val.day--">-</button>
+                <input type="number" v-model="val.day = val.day<0 || val.day=='' ? 0 : val.day">
+                <button @click="val.day++">+</button>
             </td>
             <td>
-                ￥100元
+                ￥{{val.value*val.day}}元
             </td>
         </tr>
     </table>
@@ -77,21 +77,25 @@
                 arr: [
                     {
                         name: '床',
-                        value: 100
+                        value: 100,
+                        day: 1
                     },
                     {
                         name: '沙发',
-                        value: 200
+                        value: 200,
+                        day: 1
                     },
                     {
                         name: 'wifi',
-                        value: 50
+                        value: 50,
+                        day: 1
                     }
                 ],
                 etc: [
                     {
                         name: '群力豪华型',
-                        value: 400
+                        value: 400,
+                        day: 1
                     }
                 ],
             },
@@ -108,7 +112,7 @@
                     if (this.etc.length) {
                         var total = 0;
                         for (var i = 0; i < this.etc.length; i++) {
-                            total += parseInt(this.etc[i].value);
+                            total += parseInt(this.etc[i].value) * parseInt(this.etc[i].day);
                         }
                         return total;
                     } else {
