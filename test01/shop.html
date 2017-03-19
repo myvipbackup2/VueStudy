@@ -28,19 +28,21 @@
 <body>
 
 <div id="app">
+
     <div class="hr"></div>
     <div id="etc">
         <label for="check">是否需要额外付费设施</label>
         <input id="check" type="checkbox" @click="change">
         <div v-show="bFlag">
             <ul>
-                <li v-for="(val,index) in arr">
+                <li v-for="(val,index) in arr" track-by="$index">
                     {{val.name}}({{val.value}}元)<input type="checkbox" v-model="etc" :value='val'>
                 </li>
             </ul>
         </div>
     </div>
     <div class="hr"></div>
+
     <h1>订单费用信息</h1>
 
     <table id="form" border="1">
@@ -63,8 +65,8 @@
             </td>
         </tr>
     </table>
-
     <span id="money">￥{{money}}元</span>
+
 </div>
 
 <script src="../src/vue.js"></script>
