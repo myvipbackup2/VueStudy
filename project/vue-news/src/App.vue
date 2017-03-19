@@ -19,7 +19,7 @@
         components: {
             NavView,
             FooterView,
-            Home,
+            Home
         },
         computed: mapGetters([
             'headerShow',
@@ -39,7 +39,7 @@
                     this.$store.dispatch('showFooter');
                 }
             }
-        },
+        }
     }
 </script>
 
