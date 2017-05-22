@@ -61,7 +61,7 @@ export default {
         if (process.env.NODE_ENV !== 'production') {
           warn(
             'It\'s probably a bad idea to use !important with inline rules. ' +
-            'This feature will be deprecated in a future version of Vue.'
+            'This feature.vue will be deprecated in a future version of Vue.'
           )
         }
         value = value.replace(importantRE, '').trim()

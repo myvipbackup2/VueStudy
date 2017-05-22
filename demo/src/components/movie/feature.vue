@@ -1,14 +1,16 @@
 <template>
     <md-list class="custom-list md-triple-line">
-        <md-list-item>
+        <md-list-item v-for="movie in movieLists">
             <md-avatar>
-                <img src="https://placeimg.com/40/40/people/1" alt="People">
+                <img :src="movie.images.large" alt="People">
             </md-avatar>
 
             <div class="md-list-text-container">
-                <span>Ali Connors</span>
-                <span>Brunch this weekend?</span>
-                <p>I'll be in your neighborhood doing errands...</p>
+                <span>{{movie.title}}</span>
+                <span>类型：{{movie.genres}}</span>
+                <p>
+                    <span>{{movie.year}}年</span> 平均分：{{movie.rating.average}}分
+                </p>
             </div>
 
             <md-button class="md-icon-button md-list-action">
@@ -30,7 +32,10 @@
             }
         },
         mounted(){
-            this.$http.get();
+            this.$http.get(API_PROXY + 'https://api.douban.com/v2/movie/top250?count=10&start=0')
+                .then((res) => {
+                    this.movieLists = res.data.subjects;
+                });
         }
     }
 

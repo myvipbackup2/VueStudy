@@ -49,6 +49,7 @@ Vue.material.registerTheme({
 
 // axios配置
 Vue.prototype.$http = axios; //其他页面在使用axios的时候直接  this.$http就可以了
+global.API_PROXY = 'https://bird.ioliu.cn/v1/?url=';// 线上代理地址,返回数据接口JsonBird
 
 
 new Vue({

@@ -1,5 +1,5 @@
 <template>
-    <md-toolbar>
+    <md-toolbar id="header">
         <md-button class="md-icon-button">
             <md-icon>menu</md-icon>
         </md-button>
@@ -11,3 +11,12 @@
         </md-button>
     </md-toolbar>
 </template>
+
+<style>
+    #header {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 3;
+    }
+</style>

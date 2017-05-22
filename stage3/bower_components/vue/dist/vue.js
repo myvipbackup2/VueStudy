@@ -5400,7 +5400,7 @@ var style = {
       if (isImportant) {
         /* istanbul ignore if */
         if ('development' !== 'production') {
-          warn('It\'s probably a bad idea to use !important with inline rules. ' + 'This feature will be deprecated in a future version of Vue.');
+          warn('It\'s probably a bad idea to use !important with inline rules. ' + 'This feature.vue will be deprecated in a future version of Vue.');
         }
         value = value.replace(importantRE, '').trim();
         this.el.style.setProperty(prop.kebab, value, isImportant);
