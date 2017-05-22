@@ -21,7 +21,7 @@
     }
 </script>
 
-<style scope lang="sass" rel="stylesheet/scss">
+<style scope lang="scss" rel="stylesheet/scss">
     #app {
         font-family: 'Avenir', Helvetica, Arial, sans-serif;
         -webkit-font-smoothing: antialiased;
