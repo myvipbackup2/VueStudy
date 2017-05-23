@@ -25,10 +25,14 @@
     .md-tabs-content {
         margin: 100px 0 50px;
     }
+
+    .md-theme-default.md-tabs > .md-tabs-navigation .md-tab-indicator {
+        background-color: #333;
+    }
 </style>
 
 <script>
-    import top250 from './movie-top250.vue'
+    import top250 from './top250.vue'
     import hot from './hot.vue'
     import feature from './feature.vue'
     export default{
