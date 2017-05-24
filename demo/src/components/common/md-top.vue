@@ -18,21 +18,24 @@
                 </div>
             </md-toolbar>
 
-            <p>
+            <p class="text">
                 <span>Made BY Lizixiang</span>
-                <br>
+                <br><br>
                 点击访问<a href="http://www.lizixiang.cn">个人网站</a>
             </p>
         </md-sidenav>
     </div>
 </template>
 
-<style>
+<style scope>
     #header {
         position: fixed;
         top: 0;
         width: 100%;
         z-index: 3;
+    }
+    .text{
+        padding-top: 50px;
     }
 </style>
 
