@@ -1,7 +1,6 @@
 <template>
     <div>
         <md-top></md-top>
-        <side-bar></side-bar>
         <movie-tab></movie-tab>
         <md-bottom></md-bottom>
     </div>
@@ -11,13 +10,11 @@
     import mdBottom from '../common/md-bottom.vue'
     import mdTop from '../common/md-top.vue'
     import movieTab from '../movie/movie-nav.vue'
-    import sideBar from '../common/side-bar.vue'
     export default {
         components: {
             mdBottom,
             mdTop,
             movieTab,
-            sideBar
         }
     }
 </script>
