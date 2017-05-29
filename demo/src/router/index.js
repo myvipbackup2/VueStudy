@@ -24,6 +24,14 @@ export default new Router({
         {
             path: '/music',
             name: 'music'
+        },
+        {
+            path: '/book',
+            name: 'book'
+        },
+        {
+            path: '/photo',
+            name: 'photo'
         }
     ]
 });
