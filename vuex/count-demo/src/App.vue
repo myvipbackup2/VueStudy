@@ -21,10 +21,10 @@
         },
         methods: {
             increment(){
-                ++this.count;
+                store.commit('increment');
             },
             decrement(){
-                --this.count;
+                store.commit('decrement');
             }
         }
     }
