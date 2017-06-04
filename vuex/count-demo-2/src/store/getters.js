@@ -3,7 +3,10 @@
  */
 
 export default{
-    count: (state) => {
+    /*count: (state) => {
+     return state.count
+     }*/
+    count(state){
         return state.count
     }
 }
