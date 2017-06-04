@@ -1,5 +1,6 @@
 <template>
     <div class="container">
+        <back></back>
         <svg id="robot" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0" y="0" width="320px" height="300px" viewBox="0 0 160 300" enable-background="new 0 0 320 300" xml:space="preserve">
     <rect x="59.722" y="72.779" fill="#333" width="40.557" height="27.564"></rect>
     <g id="head" class="up">
@@ -702,9 +703,11 @@
 
 <script>
     import mdTop from '../components/common/md-top.vue'
+    import back from '../components/common/md-back.vue'
     export default{
         components: {
-            mdTop
+            mdTop,
+            back
         }
     }
 </script>

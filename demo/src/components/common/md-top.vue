@@ -2,7 +2,7 @@
     <div>
         <md-toolbar id="header">
             <md-button class="md-icon-button" @click.native="toggleLeftSidenav">
-                <md-icon>menu</md-icon>
+                <md-icon>arrow</md-icon>
             </md-button>
 
             <h2 class="md-title" style="flex: 1">电影</h2>
