@@ -4,6 +4,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Movie from '../components/movie/movie.vue'
+import Err from '../pages/404.vue'
 
 
 Vue.use(Router);
@@ -32,6 +33,11 @@ export default new Router({
         {
             path: '/photo',
             name: 'photo'
+        },
+        {
+            path: '*',
+            name: '404',
+            component: Err
         }
     ]
 });

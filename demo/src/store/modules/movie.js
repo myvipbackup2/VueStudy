@@ -4,3 +4,8 @@
 
 import * as types from '../types'
 
+// initial state
+const state = {
+
+};
+
